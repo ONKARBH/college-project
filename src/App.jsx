@@ -12,6 +12,8 @@ import VisionMission from './components/VisionMission'
 import PlacedStudent from './components/PlacedStudent'
 import SomeHighlights from './components/SomeHighlights'
 import OurRecruters from './components/OurRecruters'
+import OurAchiveMent from './components/OurAchiveMent'
+// import OurAchivements from './components/OurAchivements'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -28,6 +30,7 @@ function App() {
      <PlacedStudent/>
      <SomeHighlights/>
      <OurRecruters/>
+      <OurAchiveMent/>
     </>
   )
 }
