@@ -1,5 +1,5 @@
 import React from 'react'
-
+import "../styles/visionmission.scss";
 export default function vision_mission() {
     return (
         <div className="vision-mission-container">

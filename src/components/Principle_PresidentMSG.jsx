@@ -1,9 +1,9 @@
 import React from 'react'
-import "../index.css";
+
 import patilsir from "../assets/images/patilsir_utpatsir/patilsir.png";
 import utpatsir from "../assets/images/patilsir_utpatsir/utpatsir.png";
 import NoticeBoard from './NoticeBoard';
-
+import "../styles/principalprecidentmsg.scss";
 export default function Principle_PresidentMSG() {
   return (
     // <!-- Principle & President Message Section -->

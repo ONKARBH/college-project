@@ -1,38 +1,38 @@
-import { useState } from 'react'
- 
-import './App.css'
-import Header from './components/Header'
-import Navbar from './components/Navbar'
-import Slider from './components/Slider'
-import Principle_PresidentMSG from './components/Principle_PresidentMSG'
-import NoticeBoard from './components/NoticeBoard'
-import AboutKIT from './components/AboutKIT'
-import Approved_diif_certificate from './components/Approved_diif_certificate'
-import VisionMission from './components/VisionMission'
-import PlacedStudent from './components/PlacedStudent'
-import SomeHighlights from './components/SomeHighlights'
-import OurRecruters from './components/OurRecruters'
-import OurAchiveMent from './components/OurAchiveMent'
-// import OurAchivements from './components/OurAchivements'
-function App() {
-  const [count, setCount] = useState(0)
+import Header from "./components/Header";
+import Navbar from "./components/Navbar";
+import Approved_diif_certificate from "./components/Approved_diif_certificate";
+import Slider from "./components/Slider";
+import Principle_PresidentMSG from "./components/Principle_PresidentMSG";
+import AboutKIT from "./components/AboutKIT";
+import VisionMission from "./components/VisionMission";
+import PlacedStudent from "./components/PlacedStudent";
+import OurAchiveMent from "./components/OurAchiveMent";
+import SomeHighlights from "./components/SomeHighlights";
+import OurRecruters from "./components/OurRecruters";
+import NewsPaper from "./components/NewsPaper";
 
+function App() {
   return (
     <>
-     <Header/>
-     <Navbar/>
-     <Slider/>
-     <Principle_PresidentMSG/>
-     {/* <NoticeBoard/> */}
-     <AboutKIT/>
-     <Approved_diif_certificate/>
-     <VisionMission/>
-     <PlacedStudent/>
-     <SomeHighlights/>
-     <OurRecruters/>
-      <OurAchiveMent/>
+      <Header />
+      <Navbar />
+
+      {/* HOME CONTENT */}
+      <Slider />
+      <Principle_PresidentMSG />
+      <AboutKIT />
+      <Approved_diif_certificate />
+      <VisionMission />
+      
+      <PlacedStudent />
+       <SomeHighlights />
+       <OurRecruters />
+      <OurAchiveMent />
+      <NewsPaper/>
+
+     
     </>
-  )
+  );
 }
 
-export default App
+export default App;

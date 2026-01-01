@@ -1,9 +1,9 @@
 import React from 'react'
-import AISHECertificate from '../../../Pdf_Documents/AISHECertificate.pdf';
+import AISHE from '../../Pdf_Documents/DTE_Approval/AISHE.pdf';
 export default function AISHE() {
   return (
     <div>
-      <a href={AISHECertificate}></a>
+      <a href={AISHE}></a>
     </div>
   )
 }

@@ -1,47 +1,6 @@
-// import React from 'react'
-// import company1 from "../assets/images/recruiters/company1.jpeg"
-// import company2 from "../assets/images/recruiters/company2.jpeg"
-// import company3 from "../assets/images/recruiters/company3.jpeg"
-// import company4 from "../assets/images/recruiters/company4.jpeg"
-// import company5 from "../assets/images/recruiters/company5.jpeg"
-// import company6 from "../assets/images/recruiters/company6.jpeg"
-// import company7 from "../assets/images/recruiters/company7.jpeg"
-// import company8 from "../assets/images/recruiters/company8.jpeg"
-// import company9 from "../assets/images/recruiters/company9.jpeg"
-// import company10 from "../assets/images/recruiters/company10.jpeg"
-// import company11 from "../assets/images/recruiters/company11.jpeg"
-
-
-// export default function OurRecruters() {
-//   return (
-//     <div>
-//       <div className="recruiter-container">
-//         <div className="recruiter-container2">
-//         <div className="recruiter-heading">
-//       <h3>OUR Recruiters</h3>
-//       </div>
-//       <div className="all-recruiter">
-//         <img src={company1} alt="" />
-//         <img src={company2} alt="" />
-//         <img src={company3} alt="" />
-//         <img src={company4} alt="" />
-//         <img src={company5} alt="" />
-//         <img src={company6} alt="" />
-//         <img src={company7} alt="" />
-//         <img src={company8} alt="" />
-//         <img src={company9} alt="" />
-//         <img src={company10} alt="" />
-//         <img src={company11} alt="" />
-
-
-//         </div>
-//         </div>
-//         </div>
-//     </div>
-//   )
-// }
 
 import React from 'react'
+import "../styles/ourrecruters.scss";
 import company1 from "../assets/images/recruiters/company1.jpeg"
 import company2 from "../assets/images/recruiters/company2.jpeg"
 import company3 from "../assets/images/recruiters/company3.jpeg"

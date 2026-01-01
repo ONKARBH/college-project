@@ -1,18 +1,35 @@
-import React from 'react'
+import React, { useRef, useState } from "react";
+import "../styles/about.scss";
 import college from "../assets/images/video/collegeVidio.mp4";
+
 export default function AboutKIT() {
-    return (
+  const videoRef = useRef(null);
+  const [playing, setPlaying] = useState(false);
 
-        <div>
-        <div className="aboutKIT-container">
-            <h5 className=" rounded-[7px] bg-blue-600 text-center border-b-blue-800 font-semibold">About KIT</h5>
-            <div className="aboutKIT-video">
-                <video src={college} autoPlay loop muted />
+  const handlePlay = () => {
+    videoRef.current.play();
+    setPlaying(true);
+  };
 
-            </div>
-            
-        </div>
-        
-</div>
-    )
+  return (
+    <div className="aboutKIT-container">
+      <h2 className="aboutKIT-heading">About KIT</h2>
+
+      <div className="aboutKIT-video">
+        <video
+          ref={videoRef}
+          src={college}
+          controls={playing}
+          muted
+          playsInline
+        />
+
+        {!playing && (
+          <div className="play-overlay" onClick={handlePlay}>
+            <div className="play-button">▶</div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
 }

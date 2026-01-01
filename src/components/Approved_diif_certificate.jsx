@@ -5,7 +5,7 @@ import img3 from "../assets/images/Approved-certificate/img3.jpeg";
 import img4 from "../assets/images/Approved-certificate/img4.jpeg";
 import img5 from "../assets/images/Approved-certificate/img5.jpeg";
 import img6 from "../assets/images/Approved-certificate/img6.jpeg";
-import "../index.css";
+import "../styles/approvedcertificate.scss";
 
 const slides = [
   [img1, img2],

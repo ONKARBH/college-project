@@ -1,57 +1,71 @@
-import React, { useEffect, useRef, useState } from "react";
-import "../styles/AchievementSlider.css";
+import React, { useState, useEffect } from "react";
+import "../styles/AchievementSlider.scss";
 
 const cards = [
-  { title: "Achievement 1", text: "Description 1" },
-  { title: "Achievement 2", text: "Description 2" },
-  { title: "Achievement 3", text: "Description 3" },
-  { title: "Achievement 4", text: "Description 4" },
-  { title: "Achievement 5", text: "Description 5" },
-  { title: "Achievement 6", text: "Description 6" },
-  { title: "Achievement 7", text: "Description 7" },
-  { title: "Achievement 8", text: "Description 8" },
-  { title: "Achievement 9", text: "Description 9" }
+  { title: "Mr. Sanket Karande selected in kho-kho team of DBA", img: "/img/1.jpg" },
+  { title: "Mr. Vishwas Kore selected in kho-kho team of DBATU", img: "/img/2.jpg" },
+  { title: "Our Alumnus Mr. Viki Babar selected as Revenue Ass", img: "/img/3.jpg" },
+  { title: "Achievement 4", img: "/img/4.jpg" },
+  { title: "Achievement 5", img: "/img/5.jpg" },
+  { title: "Achievement 6", img: "/img/6.jpg" },
 ];
 
 const GROUP_SIZE = 3;
 
-export default function AchievementSlider() {
+export default function AchievementSection() {
   const [index, setIndex] = useState(0);
   const totalGroups = Math.ceil(cards.length / GROUP_SIZE);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % totalGroups);
-    }, 2500); // stop → then start
+  const next = () => setIndex((prev) => (prev + 1) % totalGroups);
+  const prev = () =>
+    setIndex((prev) => (prev - 1 + totalGroups) % totalGroups);
 
-    return () => clearInterval(interval);
-  }, [totalGroups]);
+  // auto slide (stop → slide)
+  useEffect(() => {
+    const timer = setInterval(next, 4000);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
-    <div className="slider-wrapper">
-          <h4 style={{ textAlign: "right",color:"yellow", marginTop:"800px" }}>Our Achievement</h4>
-      <div
-        className="slider-track"
-        style={{
-          transform: `translateX(-${index * 100}%)`
-        }}
-      >
-        {Array.from({ length: totalGroups }).map((_, groupIndex) => (
-          <div className="slide-group" key={groupIndex}>
-            {cards
-              .slice(
-                groupIndex * GROUP_SIZE,
-                groupIndex * GROUP_SIZE + GROUP_SIZE
-              )
-              .map((card, i) => (
-                <div className="achievement-card">
-  <h3>{card.title}</h3>
-  <p>{card.text}</p>
-</div>
+    <div className="achievement-wrapper">
+      {/* LEFT STATIC CONTENT */}
+      <div className="achievement-left">
+        <h2>OUR<br />ACHIEVEMENTS</h2>
+        <div className="line"></div>
+        <p>
+          Congratulations from<br />
+          Principal, Staff & Students<br />
+          to Achievers.
+        </p>
+        <button className="view-all">VIEW ALL</button>
+      </div>
 
-              ))}
+      {/* RIGHT SLIDER */}
+      <div className="achievement-right">
+        <button className="arrow left" onClick={prev}>❮</button>
+
+        <div className="slider-viewport">
+          <div
+            className="slider-track"
+            style={{ transform: `translateX(-${index * 100}%)` }}
+          >
+            {Array.from({ length: totalGroups }).map((_, g) => (
+              <div className="card-group" key={g}>
+                {cards
+                  .slice(g * GROUP_SIZE, g * GROUP_SIZE + GROUP_SIZE)
+                  .map((card, i) => (
+                    <div className="achievement-card" key={i}>
+                      <img src={card.img} alt="" />
+                      <h4>{card.title}</h4>
+                      <button>View Details</button>
+                    </div>
+                  ))}
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
+
+        <button className="arrow right" onClick={next}>❯</button>
       </div>
     </div>
   );

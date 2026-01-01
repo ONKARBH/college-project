@@ -1,5 +1,5 @@
 import React from 'react'
-
+import "../styles/placedstudent.scss";
 export default function PlacedStudent() {
   return (
     <div className="placed-student-main-container">

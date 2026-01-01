@@ -1,0 +1,49 @@
+
+ 
+.recruiter-container {
+  padding: 4px;
+  background: #fff;
+  overflow: hidden;
+  border:2px solid grey;
+  height: 300px;
+  margin:200px 20px 20px 20px;
+  width: 100%px;
+  height: 180px;
+  background-color: #2933e4;
+  
+}
+
+.recruiter-heading {
+  text-align: center;
+  margin-bottom: 20px;
+  color:pink;
+  font-weight: 600;
+}
+
+.recruiter-slider {
+  overflow: hidden;
+  width: 100%;
+}
+
+.recruiter-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 25s linear infinite;
+}
+
+.recruiter-track img {
+  height: 80px;
+  margin: 0 30px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+ 
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
