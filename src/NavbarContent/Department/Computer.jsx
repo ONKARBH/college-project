@@ -1,5 +1,5 @@
 import React from 'react'
-import s1 from '../../Assets/Images/staffPhoto/s1.jpg'
+// import s1 from '../../Assets/Images/staffPhoto/s1.jpg'
 export default function Computer() {
   return (
     <div>

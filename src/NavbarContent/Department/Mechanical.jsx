@@ -1,5 +1,5 @@
 import React from 'react'
-import s4 from '../../Assets/Images/staffPhoto/s1.jpg'
+// import s4 from '../../Assets/Images/staffPhoto/s1.jpg'
 export default function Mechanical() {
   return (
     <div>

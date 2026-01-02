@@ -27,26 +27,24 @@ export default function NewsPaper() {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000,     // 2 second
+    autoplaySpeed: 2000,
     cssEase: "linear",
     pauseOnHover: false,
     pauseOnFocus: false,
-    ltr: true                 
+    ltr: true
   };
 
   return (
-    <div className="news-wrapper">
+    <div className="news-wrapper right-align">
       {/* HEADER */}
       <div className="news-top">
         <div className="news-title">
-          <h2>WE ARE IN NEWS</h2>
+          <h4>WE ARE IN NEWS</h4>
           <div className="line">
             <span className="blue"></span>
             <span className="dots"></span>
           </div>
         </div>
-
-        <button className="view-btn">VIEW ALL</button>
       </div>
 
       {/* SLIDER */}

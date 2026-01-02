@@ -1,5 +1,5 @@
 import React from 'react'
-import s3 from '../../Assets/Images/staffPhoto/s1.jpg'
+// import s3 from '../../Assets/Images/staffPhoto/s1.jpg'
 export default function Electronics() {
   return (
     <div>

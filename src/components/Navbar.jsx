@@ -1,8 +1,3 @@
-
-
-////
-
-//////
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../styles/navbar.scss";
@@ -18,17 +13,15 @@ export default function Navbar() {
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 768);
     };
-    
     checkMobile();
     window.addEventListener("resize", checkMobile);
-    
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   const handleMenuToggle = () => {
     const newOpenState = !open;
     setOpen(newOpenState);
-    
+
     if (newOpenState) {
       document.body.classList.add("menu-open");
       setActiveDropdown(null);
@@ -72,7 +65,7 @@ export default function Navbar() {
   // Close menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (e) => {
-      if (open && !e.target.closest('.navbar')) {
+      if (open && !e.target.closest(".navbar")) {
         handleNavClick();
       }
     };
@@ -93,42 +86,38 @@ export default function Navbar() {
         </li>
 
         {/* About Dropdown */}
-        <li className={`dropdown ${activeDropdown === 1 ? 'active' : ''}`}>
-          <a 
-            href="#" 
-            className="dropdown-toggle" 
+        <li className={`dropdown ${activeDropdown === 1 ? "active" : ""}`}>
+          <button
+            className="dropdown-toggle"
             onClick={(e) => handleDropdownClick(1, e)}
           >
             About <span className="dropdown-arrow">▼</span>
-          </a>
+          </button>
           <ul className="dropdown-menu">
-            <li><Link to="/about/why-kit" onClick={handleNavClick}>Why KIT</Link></li>
-            <li><Link to="/about/about-us" onClick={handleNavClick}>About Us</Link></li>
-            <li><Link to="/about/aicte-approvals" onClick={handleNavClick}>AICTE Approvals</Link></li>
-            <li><Link to="/about/university-affiliation" onClick={handleNavClick}>University Affiliation</Link></li>
-            <li><Link to="/about/dte-approval" onClick={handleNavClick}>DTE Approval</Link></li>
-            <li><Link to="/about/govt-resolution" onClick={handleNavClick}>Govt Resolution</Link></li>
+            <li><Link to="/about/whykit" onClick={handleNavClick}>Why KIT</Link></li>
+            <li><Link to="/about/aboutus" onClick={handleNavClick}>About Us</Link></li>
+            <li><Link to="/about/aicte" onClick={handleNavClick}>AICTE Approvals</Link></li>
+            <li><Link to="/about/university" onClick={handleNavClick}>University Affiliation</Link></li>
+            <li><Link to="/about/dte_approval" onClick={handleNavClick}>DTE Approval</Link></li>
+            <li><Link to="/about/govtresolution" onClick={handleNavClick}>Govt Resolution</Link></li>
           </ul>
         </li>
 
         {/* Admission Dropdown */}
-        <li className={`dropdown ${activeDropdown === 2 ? 'active' : ''}`}>
-          <a 
-            href="#" 
-            className="dropdown-toggle" 
+        <li className={`dropdown ${activeDropdown === 2 ? "active" : ""}`}>
+          <button
+            className="dropdown-toggle"
             onClick={(e) => handleDropdownClick(2, e)}
           >
             Admission <span className="dropdown-arrow">▼</span>
-          </a>
+          </button>
+
           <ul className="dropdown-menu">
             <li><Link to="/admission/fy-dsy-acap-il-merit-list-2025-26" onClick={handleNavClick}>FY_DSY_ACAP_ILMeritList2025_26</Link></li>
             <li><Link to="/admission/fy-dsy-non-cap-il-admission" onClick={handleNavClick}>FY_DSY_Non_CAP_ILAdmission</Link></li>
 
-            <li className={`submenu ${activeSubmenu === 1 ? 'active' : ''}`}>
-              <div 
-                className="submenu-toggle" 
-                onClick={(e) => handleSubmenuClick(1, e)}
-              >
+            <li className={`submenu ${activeSubmenu === 1 ? "active" : ""}`}>
+              <div className="submenu-toggle" onClick={(e) => handleSubmenuClick(1, e)}>
                 Fees Structure <span className="submenu-arrow">▶</span>
               </div>
               <ul className="submenu-list">
@@ -136,11 +125,8 @@ export default function Navbar() {
               </ul>
             </li>
 
-            <li className={`submenu ${activeSubmenu === 2 ? 'active' : ''}`}>
-              <div 
-                className="submenu-toggle" 
-                onClick={(e) => handleSubmenuClick(2, e)}
-              >
+            <li className={`submenu ${activeSubmenu === 2 ? "active" : ""}`}>
+              <div className="submenu-toggle" onClick={(e) => handleSubmenuClick(2, e)}>
                 Admission <span className="submenu-arrow">▶</span>
               </div>
               <ul className="submenu-list">
@@ -155,14 +141,10 @@ export default function Navbar() {
         </li>
 
         {/* Department Dropdown */}
-        <li className={`dropdown ${activeDropdown === 3 ? 'active' : ''}`}>
-          <a 
-            href="#" 
-            className="dropdown-toggle" 
-            onClick={(e) => handleDropdownClick(3, e)}
-          >
+        <li className={`dropdown ${activeDropdown === 3 ? "active" : ""}`}>
+          <button className="dropdown-toggle" onClick={(e) => handleDropdownClick(3, e)}>
             Department <span className="dropdown-arrow">▼</span>
-          </a>
+          </button>
           <ul className="dropdown-menu">
             <li><Link to="/departments/computer" onClick={handleNavClick}>Computer Science & Engineering</Link></li>
             <li><Link to="/departments/civil" onClick={handleNavClick}>Civil Engineering</Link></li>
@@ -172,14 +154,10 @@ export default function Navbar() {
         </li>
 
         {/* NAAC Dropdown */}
-        <li className={`dropdown ${activeDropdown === 4 ? 'active' : ''}`}>
-          <a 
-            href="#" 
-            className="dropdown-toggle" 
-            onClick={(e) => handleDropdownClick(4, e)}
-          >
+        <li className={`dropdown ${activeDropdown === 4 ? "active" : ""}`}>
+          <button className="dropdown-toggle" onClick={(e) => handleDropdownClick(4, e)}>
             NAAC <span className="dropdown-arrow">▼</span>
-          </a>
+          </button>
           <ul className="dropdown-menu">
             <li><Link to="/naac/accreditation" onClick={handleNavClick}>Accreditation</Link></li>
             <li><Link to="/naac/academic-calendar" onClick={handleNavClick}>Academic Calendar</Link></li>
@@ -188,14 +166,10 @@ export default function Navbar() {
         </li>
 
         {/* Academics Dropdown */}
-        <li className={`dropdown ${activeDropdown === 5 ? 'active' : ''}`}>
-          <a 
-            href="#" 
-            className="dropdown-toggle" 
-            onClick={(e) => handleDropdownClick(5, e)}
-          >
+        <li className={`dropdown ${activeDropdown === 5 ? "active" : ""}`}>
+          <button className="dropdown-toggle" onClick={(e) => handleDropdownClick(5, e)}>
             Academics <span className="dropdown-arrow">▼</span>
-          </a>
+          </button>
           <ul className="dropdown-menu">
             <li><Link to="/academics/academic-calendar" onClick={handleNavClick}>Academic Calendar</Link></li>
             <li><Link to="/academics/rules-regulations" onClick={handleNavClick}>Rules & Regulations</Link></li>
@@ -204,14 +178,10 @@ export default function Navbar() {
         </li>
 
         {/* Facilities Dropdown */}
-        <li className={`dropdown ${activeDropdown === 6 ? 'active' : ''}`}>
-          <a 
-            href="#" 
-            className="dropdown-toggle" 
-            onClick={(e) => handleDropdownClick(6, e)}
-          >
+        <li className={`dropdown ${activeDropdown === 6 ? "active" : ""}`}>
+          <button className="dropdown-toggle" onClick={(e) => handleDropdownClick(6, e)}>
             Facilities <span className="dropdown-arrow">▼</span>
-          </a>
+          </button>
           <ul className="dropdown-menu">
             <li><Link to="/facilities/library" onClick={handleNavClick}>Library</Link></li>
             <li><Link to="/facilities/workshop" onClick={handleNavClick}>Workshop</Link></li>
@@ -221,14 +191,10 @@ export default function Navbar() {
         </li>
 
         {/* Placements Dropdown */}
-        <li className={`dropdown ${activeDropdown === 7 ? 'active' : ''}`}>
-          <a 
-            href="#" 
-            className="dropdown-toggle" 
-            onClick={(e) => handleDropdownClick(7, e)}
-          >
+        <li className={`dropdown ${activeDropdown === 7 ? "active" : ""}`}>
+          <button className="dropdown-toggle" onClick={(e) => handleDropdownClick(7, e)}>
             Placements <span className="dropdown-arrow">▼</span>
-          </a>
+          </button>
           <ul className="dropdown-menu">
             <li><Link to="/placements/2020-21" onClick={handleNavClick}>2020-21</Link></li>
             <li><Link to="/placements/2021-22" onClick={handleNavClick}>2021-22</Link></li>
@@ -245,4 +211,3 @@ export default function Navbar() {
     </nav>
   );
 }
- 

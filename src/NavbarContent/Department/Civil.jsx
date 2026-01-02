@@ -1,5 +1,5 @@
 import React from 'react'
-import s2 from '../../Assets/Images/staffPhoto/s1.jpg'
+// import s2 from '../../Assets/Images/staffPhoto/s1.jpg'
 export default function Civil() {
   return (
     <div>

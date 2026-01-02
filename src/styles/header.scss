@@ -221,6 +221,7 @@
 
 /* Individual messages */
 .msg1, .msg2, .msg3 {
+  font-weight: 500;
   font-size: 14px;
   line-height: 1.4;
   color: #444;
@@ -230,6 +231,7 @@
   text-overflow: ellipsis;
   width: 100%;
   text-align: center;
+ 
 
   @media (max-width: 1200px) {
     font-size: 13.5px;

@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function ATM() {
+export default function Placement2020_21() {
   return (
     <div>
-   <h1>hi</h1>
+      <h1>hi</h1>
     </div>
   )
 }
