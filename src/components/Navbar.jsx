@@ -113,15 +113,15 @@ export default function Navbar() {
           </button>
 
           <ul className="dropdown-menu">
-            <li><Link to="/admission/fy-dsy-acap-il-merit-list-2025-26" onClick={handleNavClick}>FY_DSY_ACAP_ILMeritList2025_26</Link></li>
-            <li><Link to="/admission/fy-dsy-non-cap-il-admission" onClick={handleNavClick}>FY_DSY_Non_CAP_ILAdmission</Link></li>
+            <li><Link to="/admissions/fy_dsy_acap_ilmeritlist2025_26" onClick={handleNavClick}>FY_DSY_ACAP_ILMeritList2025_26</Link></li>
+            <li><Link to="/admissions/fy_dsy_non_cap_il_admission" onClick={handleNavClick}>FY_DSY_Non_CAP_ILAdmission</Link></li>
 
             <li className={`submenu ${activeSubmenu === 1 ? "active" : ""}`}>
               <div className="submenu-toggle" onClick={(e) => handleSubmenuClick(1, e)}>
                 Fees Structure <span className="submenu-arrow">▶</span>
               </div>
               <ul className="submenu-list">
-                <li><Link to="/admission/fees-structure/2025-26" onClick={handleNavClick}>2025-26</Link></li>
+                <li><Link to="/admissions/feestructure" onClick={handleNavClick}>2025-26</Link></li>
               </ul>
             </li>
 
@@ -130,10 +130,9 @@ export default function Navbar() {
                 Admission <span className="submenu-arrow">▶</span>
               </div>
               <ul className="submenu-list">
-                <li><Link to="/admission/admission-enquiry" onClick={handleNavClick}>Admission Enquiry</Link></li>
-                <li><Link to="/admission/admission-procedure" onClick={handleNavClick}>Admission Procedure</Link></li>
-                <li><Link to="/admission/eligibility-criteria" onClick={handleNavClick}>Eligibility Criteria</Link></li>
-                <li><Link to="/admission/fee-structure" onClick={handleNavClick}>Fee Structure</Link></li>
+                 <li><Link to="/admission/admission_procedure" onClick={handleNavClick}>Admission Procedure</Link></li>
+                <li><Link to="/admission/eligibility_criteria" onClick={handleNavClick}>Eligibility Criteria</Link></li>
+                <li><Link to="/admission/fee_structure" onClick={handleNavClick}>Fee Structure</Link></li>
                 <li><Link to="/admission/intake" onClick={handleNavClick}>Intake</Link></li>
               </ul>
             </li>
@@ -160,8 +159,8 @@ export default function Navbar() {
           </button>
           <ul className="dropdown-menu">
             <li><Link to="/naac/accreditation" onClick={handleNavClick}>Accreditation</Link></li>
-            <li><Link to="/naac/academic-calendar" onClick={handleNavClick}>Academic Calendar</Link></li>
-            <li><Link to="/naac/audit-statement" onClick={handleNavClick}>Audit Statement</Link></li>
+            <li><Link to="/naac/academic_calendar1" onClick={handleNavClick}>Academic Calendar</Link></li>
+            <li><Link to="/naac/audit_statement" onClick={handleNavClick}>Audit Statement</Link></li>
           </ul>
         </li>
 
@@ -171,9 +170,9 @@ export default function Navbar() {
             Academics <span className="dropdown-arrow">▼</span>
           </button>
           <ul className="dropdown-menu">
-            <li><Link to="/academics/academic-calendar" onClick={handleNavClick}>Academic Calendar</Link></li>
-            <li><Link to="/academics/rules-regulations" onClick={handleNavClick}>Rules & Regulations</Link></li>
-            <li><Link to="/academics/nptel-courses" onClick={handleNavClick}>NPTEL Courses</Link></li>
+            <li><Link to="/academics/academic_calendar" onClick={handleNavClick}>Academic Calendar</Link></li>
+            <li><Link to="/academics/rules_regulations" onClick={handleNavClick}>Rules & Regulations</Link></li>
+            <li><Link to="/academics/nptel_courses" onClick={handleNavClick}>NPTEL Courses</Link></li>
           </ul>
         </li>
 
@@ -196,12 +195,12 @@ export default function Navbar() {
             Placements <span className="dropdown-arrow">▼</span>
           </button>
           <ul className="dropdown-menu">
-            <li><Link to="/placements/2020-21" onClick={handleNavClick}>2020-21</Link></li>
-            <li><Link to="/placements/2021-22" onClick={handleNavClick}>2021-22</Link></li>
-            <li><Link to="/placements/2022-23" onClick={handleNavClick}>2022-23</Link></li>
-            <li><Link to="/placements/2023-24" onClick={handleNavClick}>2023-24</Link></li>
-            <li><Link to="/placements/2024-25" onClick={handleNavClick}>2024-25</Link></li>
-            <li><Link to="/placements/2025-26" onClick={handleNavClick}>2025-26</Link></li>
+            <li><Link to="/Placements/Placement2020_21" onClick={handleNavClick}>2020-21</Link></li>
+            <li><Link to="/Placements/Placement2021_22" onClick={handleNavClick}>2021-22</Link></li>
+            <li><Link to="/Placements/Placement2022_23" onClick={handleNavClick}>2022-23</Link></li>
+            <li><Link to="/Placements/Placement2023_24" onClick={handleNavClick}>2023-24</Link></li>
+            <li><Link to="/Placements/Placement2024_25" onClick={handleNavClick}>2024-25</Link></li>
+            <li><Link to="/Placements/Placement2025_26" onClick={handleNavClick}>2025-26</Link></li>
           </ul>
         </li>
 

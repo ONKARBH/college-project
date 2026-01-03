@@ -1,4 +1,3 @@
-// App.jsx
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
@@ -6,7 +5,7 @@ import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
-// Home page components
+/* HOME */
 import Slider from "./components/Slider";
 import Principle_PresidentMSG from "./components/Principle_PresidentMSG";
 import AboutKIT from "./components/AboutKIT";
@@ -18,7 +17,7 @@ import OurAchiveMent from "./components/OurAchiveMent";
 import OurRecruters from "./components/OurRecruters";
 import NewsPaper from "./components/NewsPaper";
 
-// About pages
+/* ABOUT */
 import WhyKit from "./NavbarContent/About/WhyKit";
 import AboutUs from "./NavbarContent/About/AboutUs";
 import AICTE from "./NavbarContent/About/AICTE";
@@ -26,48 +25,47 @@ import University from "./NavbarContent/About/University";
 import DTE_Approval from "./NavbarContent/About/DTE_Approval";
 import GovtResolution from "./NavbarContent/About/GovtResolution";
 
-// Admission pages
-import FYDSYACAP from "./NavbarContent/Admissions/FY_DSY_ACAP_ILMeritList2025_26";
-import FYDSYNonCAP from "./NavbarContent/Admissions/FY_DSY_Non_CAP_IL_Admission";
-import FeesStructure from "./NavbarContent/Admissions/FeeStructure";
-import AdmissionEnquiry from "./NavbarContent/Admissions/Admission/Intake"; // check if Intake page correct
-import AdmissionProcedure from "./NavbarContent/Admissions/Admission/Admission_Procedure";
-import EligibilityCriteria from "./NavbarContent/Admissions/Admission/Eligibility_Criteria";
-import FeeStructure from "./NavbarContent/Admissions/Admission/Fee_Structure";
+/* ADMISSIONS */
+import FY_DSY_ACAP_ILMeritList2025_26 from "./NavbarContent/Admissions/FY_DSY_ACAP_ILMeritList2025_26";
+import FY_DSY_Non_CAP_IL_Admission from "./NavbarContent/Admissions/FY_DSY_Non_CAP_IL_Admission";
+
+import Admission_Procedure from "./NavbarContent/Admissions/Admission/Admission_Procedure";
+import Eligibility_Criteria from "./NavbarContent/Admissions/Admission/Eligibility_Criteria";
+import Fee_Structure from "./NavbarContent/Admissions/Admission/Fee_Structure";
 import Intake from "./NavbarContent/Admissions/Admission/Intake";
 
-// Departments
-import ComputerDept from "./NavbarContent/Department/Computer";
-import CivilDept from "./NavbarContent/Department/Civil";
-import ElectronicsDept from "./NavbarContent/Department/Electronics";
-import MechanicalDept from "./NavbarContent/Department/Mechanical";
+/* DEPARTMENTS */
+import Computer from "./NavbarContent/Department/Computer";
+import Civil from "./NavbarContent/Department/Civil";
+import Electronics from "./NavbarContent/Department/Electronics";
+import Mechanical from "./NavbarContent/Department/Mechanical";
 
-// NAAC
+/* NAAC */
 import Accreditation from "./NavbarContent/NAAC/Accreditation";
-import AcademicCalendarNAAC from "./NavbarContent/NAAC/Academic_Calendar";
-import AuditStatement from "./NavbarContent/NAAC/Audit_Statement";
+import Audit_Statement from "./NavbarContent/NAAC/Audit_Statement";
+import Academic_Calendar1 from "./NavbarContent/NAAC/Academic_Calendar1";
 
-// Academics
-import RulesRegulations from "./NavbarContent/Academics/Rules_Regulations";
-import NPTELCourses from "./NavbarContent/Academics/NPTEL_Courses";
-import AcademicCalendar from "./NavbarContent/Academics/Academic_Calendar";
+/* ACADEMICS */
+import Rules_Regulations from "./NavbarContent/Academics/Rules_Regulations";
+import NPTEL_Courses from "./NavbarContent/Academics/NPTEL_Courses";
+import Academic_Calendar from "./NavbarContent/Academics/Academic_Calendar";
 
-// Facilities
+/* FACILITIES */
 import Library from "./NavbarContent/Facilities/Library";
-import Workshop from "./NavbarContent/Facilities/Workshop";  
+import Workshop from "./NavbarContent/Facilities/Workshop";
 import ATM from "./NavbarContent/Facilities/ATM";
 import Sports from "./NavbarContent/Facilities/Sports";
 
-// Placements
-import Placement2020 from "./NavbarContent/Placements/Placement2020_21";
-import Placement2021 from "./NavbarContent/Placements/Placement2021_22";
-import Placement2022 from "./NavbarContent/Placements/Placement2022_23";
-import Placement2023 from "./NavbarContent/Placements/Placement2023_24";
-import Placement2024 from "./NavbarContent/Placements/Placement2024_25";
-import Placement2025 from "./NavbarContent/Placements/Placement2025_26";
+/* PLACEMENTS */
+import Placement2020_21 from "./NavbarContent/Placements/Placement2020_21";
+import Placement2021_22 from "./NavbarContent/Placements/Placement2021_22";
+import Placement2022_23 from "./NavbarContent/Placements/Placement2022_23";
+import Placement2023_24 from "./NavbarContent/Placements/Placement2023_24";
+import Placement2024_25 from "./NavbarContent/Placements/Placement2024_25";
+import Placement2025_26 from "./NavbarContent/Placements/Placement2025_26";
 
-// Others
-import Contact from "./NavbarContent/ContactUs";
+/* OTHERS */
+import ContactUs from "./NavbarContent/ContactUs";
 import Gallery from "./NavbarContent/Gallary";
 
 function App() {
@@ -104,31 +102,35 @@ function App() {
         <Route path="/about/dte_approval" element={<DTE_Approval />} />
         <Route path="/about/govtresolution" element={<GovtResolution />} />
 
-        {/* ADMISSION */}
-        <Route path="/admission/fy-dsy-acap-il-merit-list-2025-26" element={<FYDSYACAP />} />
-        <Route path="/admission/fy-dsy-non-cap-il-admission" element={<FYDSYNonCAP />} />
-        <Route path="/admission/fees-structure/2025-26" element={<FeesStructure />} />
-        <Route path="/admission/admission-enquiry" element={<AdmissionEnquiry />} />
-        <Route path="/admission/admission-procedure" element={<AdmissionProcedure />} />
-        <Route path="/admission/eligibility-criteria" element={<EligibilityCriteria />} />
-        <Route path="/admission/fee-structure" element={<FeeStructure />} />
+        {/* ADMISSIONS */}
+        <Route
+          path="/admissions/fy-dsy-acap-il-merit-list-2025-26"
+          element={<FY_DSY_ACAP_ILMeritList2025_26 />}
+        />
+        <Route
+          path="/admissions/fy-dsy-non-cap-il-admission"
+          element={<FY_DSY_Non_CAP_IL_Admission />}
+        />
+        <Route path="/admission/admission_procedure" element={<Admission_Procedure />} />
+        <Route path="/admission/eligibility_criteria" element={<Eligibility_Criteria />} />
+        <Route path="/admission/fee_structure" element={<Fee_Structure />} />
         <Route path="/admission/intake" element={<Intake />} />
 
         {/* DEPARTMENTS */}
-        <Route path="/departments/computer" element={<ComputerDept />} />
-        <Route path="/departments/civil" element={<CivilDept />} />
-        <Route path="/departments/electronics" element={<ElectronicsDept />} />
-        <Route path="/departments/mechanical" element={<MechanicalDept />} />
+        <Route path="/departments/computer" element={<Computer />} />
+        <Route path="/departments/civil" element={<Civil />} />
+        <Route path="/departments/electronics" element={<Electronics />} />
+        <Route path="/departments/mechanical" element={<Mechanical />} />
 
         {/* NAAC */}
         <Route path="/naac/accreditation" element={<Accreditation />} />
-        <Route path="/naac/academic-calendar" element={<AcademicCalendarNAAC />} />
-        <Route path="/naac/audit-statement" element={<AuditStatement />} />
+        <Route path="/naac/academic_calendar1" element={<Academic_Calendar1 />} />
+        <Route path="/naac/audit_statement" element={<Audit_Statement />} />
 
         {/* ACADEMICS */}
-        <Route path="/academics/rules-regulations" element={<RulesRegulations />} />
-        <Route path="/academics/nptel-courses" element={<NPTELCourses />} />
-        <Route path="/academics/academic-calendar" element={<AcademicCalendar />} />
+        <Route path="/academics/rules_regulations" element={<Rules_Regulations />} />
+        <Route path="/academics/nptel_courses" element={<NPTEL_Courses />} />
+        <Route path="/academics/academic_calendar" element={<Academic_Calendar />} />
 
         {/* FACILITIES */}
         <Route path="/facilities/library" element={<Library />} />
@@ -137,19 +139,17 @@ function App() {
         <Route path="/facilities/sports" element={<Sports />} />
 
         {/* PLACEMENTS */}
-        <Route path="/placements/2020-21" element={<Placement2020 />} />
-        <Route path="/placements/2021-22" element={<Placement2021 />} />
-        <Route path="/placements/2022-23" element={<Placement2022 />} />
-        <Route path="/placements/2023-24" element={<Placement2023 />} />
-        <Route path="/placements/2024-25" element={<Placement2024 />} />
-        <Route path="/placements/2025-26" element={<Placement2025 />} />
-
+        <Route path="/placements/placement2020_21" element={<Placement2020_21 />} />
+        <Route path="/placements/placement2021_22" element={<Placement2021_22 />} />
+        <Route path="/placements/placement2022_23" element={<Placement2022_23 />} />
+        <Route path="/placements/placement2023_24" element={<Placement2023_24 />} />
+        <Route path="/placements/placement2024_25" element={<Placement2024_25 />} />
+        <Route path="/placements/placement2025_26" element={<Placement2025_26 />} />
         {/* OTHERS */}
         <Route path="/gallery" element={<Gallery />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/contact" element={<ContactUs />} />
 
-        {/* 404 */}
-        <Route path="*" element={<div>Page Not Found</div>} />
+        <Route path="*" element={<h2>Page Not Found</h2>} />
       </Routes>
 
       <Footer />
