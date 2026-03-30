@@ -1,0 +1,529 @@
+// Variables
+$primary-color: #1a365d;
+$secondary-color: #2d5c9a;
+$accent-color: #e63946;
+$success-color: #10b981;
+$warning-color: #f59e0b;
+$light-color: #ffffff;
+$dark-color: #2d3748;
+$light-bg: #f8fafc;
+$border-radius: 16px;
+$transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+$shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+$shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.15);
+
+.placed-students-section {
+  background: linear-gradient(135deg, #fef6ff 0%, #ffffff 100%);
+  padding: 5rem 2rem;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #8b5cf6, $accent-color, #8b5cf6);
+  }
+}
+
+.section-intro {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+
+  .section-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: $primary-color;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+
+    .highlight {
+      color: #2d5c9a;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 8px;
+        left: 0;
+        width: 100%;
+        height: 10px;
+        background: rgba(139, 92, 246, 0.15);
+        z-index: -1;
+        border-radius: 5px;
+      }
+    }
+  }
+
+  .section-description {
+    color: #64748b;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+.placement-stats {
+  margin-bottom: 3rem;
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .stat-card {
+    background: white;
+    border-radius: $border-radius;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: $shadow;
+    transition: $transition;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: $shadow-lg;
+    }
+
+    .stat-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    .stat-number {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #2d5c9a;
+      margin-bottom: 0.5rem;
+      line-height: 1;
+    }
+
+    .stat-label {
+      color: #64748b;
+      font-weight: 500;
+    }
+  }
+}
+
+.filter-controls {
+  background: white;
+  border-radius: $border-radius;
+  padding: 1.5rem;
+  box-shadow: $shadow;
+  margin-bottom: 3rem;
+
+  .filter-group {
+    .filter-label {
+      display: block;
+      font-weight: 600;
+      color: $primary-color;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    .filter-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+  }
+
+  .filter-btn {
+    background: $light-bg;
+    border: 1px solid #e2e8f0;
+    color: #64748b;
+    padding: 0.6rem 1.5rem;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: $transition;
+
+    &:hover {
+      background: rgba($primary-color, 0.1);
+      color: $primary-color;
+      border-color: $primary-color;
+    }
+
+    &.active {
+      background: linear-gradient(45deg, #8b5cf6, $accent-color);
+      color: white;
+      border-color: transparent;
+      box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);
+    }
+  }
+}
+
+.students-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 4rem;
+  margin-bottom: 3rem;
+}
+
+.slick-slider {
+  margin-bottom: 3rem;
+  
+  .slick-list {
+    margin: 0 -10px;
+    
+    .slick-slide {
+      padding: 0 10px;
+      
+      > div {
+        margin-bottom: 0;
+      }
+    }
+  }
+  
+  .slick-dots {
+    bottom: -40px;
+    
+    li button:before {
+      font-size: 12px;
+      color: $primary-color;
+      opacity: 0.3;
+    }
+    
+    li.slick-active button:before {
+      color: #8b5cf6;
+      opacity: 1;
+    }
+  }
+}
+
+.student-card {
+  background: white;
+  border-radius: $border-radius;
+  overflow: hidden;
+  box-shadow: $shadow;
+  transition: $transition;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $shadow-lg;
+  }
+
+  .card-image {
+    position: relative;
+    height: 320px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+  }
+
+  .card-content {
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .student-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: $primary-color;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+
+  .department-tag {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .placement-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid #e2e8f0;
+
+    .company-name {
+      font-weight: 600;
+      color: $dark-color;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .package-amount {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #8b5cf6;
+      background: linear-gradient(45deg, #8b5cf6, #6366f1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  }
+}
+
+// Responsive Styles
+@media (max-width: 1024px) {
+  .student-card .card-image {
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .placed-students-section {
+    padding: 3rem 1rem;
+  }
+
+  .section-intro {
+    margin-bottom: 2rem;
+    
+    .section-title {
+      font-size: 2rem !important;
+    }
+    
+    .section-description {
+      font-size: 1rem;
+      padding: 0 1rem;
+    }
+  }
+
+  .placement-stats {
+    margin-bottom: 2rem;
+    
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      padding: 0 0.5rem;
+    }
+    
+    .stat-card {
+      padding: 1.5rem;
+      
+      .stat-icon {
+        font-size: 2rem;
+        margin-bottom: 0.75rem;
+      }
+      
+      .stat-number {
+        font-size: 1.8rem;
+      }
+      
+      .stat-label {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .filter-controls {
+    padding: 1rem;
+    margin-bottom: 2rem;
+    
+    .filter-group {
+      .filter-label {
+        text-align: center;
+        margin-bottom: 0.75rem;
+        font-size: 0.95rem;
+      }
+      
+      .filter-buttons {
+        justify-content: center;
+        gap: 0.6rem;
+      }
+    }
+    
+    .filter-btn {
+      padding: 0.5rem 1.2rem !important;
+      font-size: 0.85rem !important;
+    }
+  }
+
+  .students-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .slick-slider {
+    margin-bottom: 2rem;
+    
+    .slick-list {
+      margin: 0 -8px;
+      
+      .slick-slide {
+        padding: 0 8px;
+      }
+    }
+    
+    .slick-dots {
+      bottom: -30px;
+    }
+  }
+
+  .student-card {
+    .card-image {
+      height: 280px;
+    }
+    
+    .card-content {
+      padding: 1.2rem;
+      
+      .student-name {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+      }
+      
+      .department-tag {
+        font-size: 0.75rem;
+        padding: 0.35rem 0.9rem;
+        margin-bottom: 0.75rem;
+      }
+      
+      .placement-info {
+        .company-name {
+          font-size: 0.85rem;
+        }
+        
+        .package-amount {
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 580px) {
+  .placement-stats {
+    .stats-grid {
+      gap: 0.8rem;
+    }
+    
+    .stat-card {
+      padding: 1.2rem;
+      
+      .stat-icon {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+      }
+      
+      .stat-number {
+        font-size: 1.5rem;
+      }
+      
+      .stat-label {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .placed-students-section {
+    padding: 2rem 0.75rem;
+  }
+  
+  .section-intro {
+    .section-title {
+      font-size: 1.75rem !important;
+    }
+  }
+  
+  .placement-stats {
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.6rem;
+      padding: 0;
+    }
+    
+    .stat-card {
+      padding: 1rem;
+      
+      .stat-icon {
+        font-size: 1.6rem;
+        margin-bottom: 0.4rem;
+      }
+      
+      .stat-number {
+        font-size: 1.3rem;
+      }
+      
+      .stat-label {
+        font-size: 0.7rem;
+      }
+    }
+  }
+  
+  .filter-controls {
+    padding: 0.8rem;
+    margin-bottom: 1.5rem;
+    
+    .filter-group {
+      .filter-buttons {
+        gap: 0.5rem;
+      }
+    }
+    
+    .filter-btn {
+      padding: 0.4rem 0.9rem !important;
+      font-size: 0.75rem !important;
+    }
+  }
+  
+  .student-card {
+    .card-image {
+      height: 240px;
+    }
+    
+    .card-content {
+      padding: 1rem;
+      
+      .student-name {
+        font-size: 1.1rem;
+      }
+      
+      .department-tag {
+        font-size: 0.7rem;
+        padding: 0.3rem 0.8rem;
+      }
+      
+      .placement-info {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+        
+        .company-name {
+          font-size: 0.85rem;
+        }
+        
+        .package-amount {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+  
+  .slick-slider {
+    .slick-list {
+      margin: 0 -5px;
+      
+      .slick-slide {
+        padding: 0 5px;
+      }
+    }
+  }
+}

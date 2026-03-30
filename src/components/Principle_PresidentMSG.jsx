@@ -1,7 +1,7 @@
 import React from 'react'
 
-import patilsir from "../assets/images/patilsir_utpatsir/patilsir.png";
-import utpatsir from "../assets/images/patilsir_utpatsir/utpatsir.png";
+import patilsir from "../assets/images/patilsir_chairman/patilsir.png";
+ import chairman from "../assets/images/patilsir_chairman/chairman.png";
 import NoticeBoard from './NoticeBoard';
 import "../styles/principalprecidentmsg.scss";
 export default function Principle_PresidentMSG() {
@@ -9,7 +9,28 @@ export default function Principle_PresidentMSG() {
     // <!-- Principle & President Message Section -->
 <div className="message-container">
 
-  {/* <!-- Principal Message --> */}
+  
+
+  {/* <!-- President Message --> */}
+  <div className="card2">
+    
+    <div className="card-body">
+      <h5 className="card-title bg-blue-500 uppercase">chairman</h5>
+      <img
+      className="card-img2"
+      src={chairman}
+      alt="chairman"
+    />
+      <p className="card-text2">
+        Dear Friends, I welcome you all to KIT College of Engineering.
+        Our focus is on quality education, innovation, and
+        holistic student growth through world-class infrastructure.
+      </p>
+    </div>
+
+  </div>
+
+   {/* <!-- Principal Message --> */}
   <div className="card1">
     
     <div className="card-body">
@@ -26,25 +47,6 @@ export default function Principle_PresidentMSG() {
         facilities.  
       </p>
     </div>
-  </div>
-
-  {/* <!-- President Message --> */}
-  <div className="card2">
-    
-    <div className="card-body">
-      <h5 className="card-title bg-blue-500 uppercase">President</h5>
-      <img
-      className="card-img2"
-      src={utpatsir}
-      alt="President"
-    />
-      <p className="card-text2">
-        Dear Friends, I welcome you all to KIT College of Engineering.
-        Our focus is on quality education, innovation, and
-        holistic student growth through world-class infrastructure.
-      </p>
-    </div>
-
   </div>
     <NoticeBoard/>
 </div>

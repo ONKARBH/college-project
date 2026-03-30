@@ -1,0 +1,126 @@
+.civil-dept {
+  padding: 40px 8%;
+  background: #f8fafc;
+  color: #1e293b;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Top Section: Image Left + Paragraph Right */
+.civil-top-row {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  margin-bottom: 30px;
+
+  .civil-image {
+    flex: 0 0 400px; // image width
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .civil-intro-right {
+    flex: 1;
+
+    h1 {
+      font-size: 2rem;
+      color: #1a365d;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+  }
+}
+
+/* Remaining content below the top section */
+.civil-below {
+  p {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+}
+
+/* Civil Section Styling */
+.civil-section {
+  background: #ffffff;
+  padding: 25px;
+  margin-bottom: 30px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+
+  h2 {
+    color: #2d5c9a;
+    margin-bottom: 15px;
+  }
+
+  p {
+    line-height: 1.7;
+    margin-bottom: 12px;
+  }
+}
+
+/* Highlight Section */
+.highlight {
+  background: linear-gradient(135deg, #e0ecff, #ffffff);
+}
+
+/* Vision & Mission */
+.civil-vm {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+
+  .box {
+    background: #1a365d;
+    color: #ffffff;
+    padding: 25px;
+    border-radius: 16px;
+
+    h2 {
+      margin-bottom: 12px;
+      color: #ffd166;
+    }
+
+    ul {
+      padding-left: 18px;
+
+      li {
+        margin-bottom: 8px;
+      }
+    }
+  }
+}
+
+/* Features */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+
+  li {
+    background: #e6f0ff;
+    padding: 12px 15px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .civil-top-row {
+    flex-direction: column;
+
+    .civil-image {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+  }
+}

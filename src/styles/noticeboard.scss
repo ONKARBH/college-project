@@ -33,7 +33,8 @@
 
 /* ===== NEWS LIST ===== */
 
-.newsItems {
+
+.news-track {
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -41,8 +42,13 @@
 }
 
 /* Pause on hover */
-.news-box:hover .newsItems {
+.news-box:hover .news-track {
   animation-play-state: paused;
+}
+
+.newsItems {
+  margin: 0;
+  padding: 0;
 }
 
 .newsItems li {
@@ -66,15 +72,74 @@
   color: #ffffff;
   transform: translateX(4px);
 }
+/* ===== KARMA TECH HIGHLIGHT SUPER POP ===== */
+
+.highlight-news {
+  position: relative;
+  font-weight: 700;
+  animation: pulseGlowFlash 1.5s infinite, wiggle 0.8s infinite;
+  background: #f0f9ff; /* subtle background highlight */
+  border-left: 4px solid #2563eb;
+}
+
+/* 🔴 Blinking Dot */
+.blink-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+  border-radius: 50%;
+  background: red;
+  animation: blink 1s infinite;
+}
+
+/* 🟡 NEW Badge */
+.new-badge {
+  display: inline-block;
+  margin-right: 8px;
+  padding: 2px 6px;
+  font-size: 10px;
+  font-weight: bold;
+  color: #000;
+  background: yellow;
+  border-radius: 4px;
+  animation: blink 1s infinite;
+}
+
+/* Pulse + Flash Background */
+@keyframes pulseGlowFlash {
+  0%   { box-shadow: 0 0 0px rgba(37, 99, 235, 0); background-color: #f0f9ff; }
+  25%  { box-shadow: 0 0 12px rgba(37, 99, 235, 0.6); background-color: #e0f2fe; }
+  50%  { box-shadow: 0 0 0px rgba(37, 99, 235, 0); background-color: #f0f9ff; }
+  75%  { box-shadow: 0 0 12px rgba(37, 99, 235, 0.6); background-color: #e0f2fe; }
+  100% { box-shadow: 0 0 0px rgba(37, 99, 235, 0); background-color: #f0f9ff; }
+}
+
+/* Wiggle / small horizontal shake */
+@keyframes wiggle {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-2px); }
+  50% { transform: translateX(2px); }
+  75% { transform: translateX(-2px); }
+  100% { transform: translateX(0); }
+}
+
+/* Blinking animation */
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.2; }
+  100% { opacity: 1; }
+}
 
 /* ===== INFINITE SCROLL ===== */
 
 @keyframes scrollUp {
   0% {
-    transform: translateY(0%);
+    transform: translateY(0);
   }
+
   100% {
-    transform: translateY(-50%);
+    transform: translateY(-100%);
   }
 }
 

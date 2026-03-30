@@ -1,16 +1,48 @@
-import React from 'react'
+import React from "react";
+import "../../styles/whykit.scss";
 
 export default function WhyKit() {
   return (
-    <div>
-      <h2>Welcome to Karmayogi Institute of Technology</h2>
-            <h1>Shelve</h1>
-            <p>
-                It is a desired approach to learning that aligns itself with the emerging fourth industrial revolution. This industrial revolution focuses on smart technology, artificial intelligence, and robotics all of which now impact our everyday lives. For engineering colleges to continue to generate successful graduates, they must prepare their students for a world where cyber-physical systems are prevalent across all industries. This means, teaching students about this technology as part of the curriculum, changing the approach to learning altogether, and utilizing this technology to improve the teaching & learning experience. This transformation of the education industry will make it more personalized, peer-to-peer, and a continuous process. Education 4.0 will cater to the need of industry 4.0 enabling the workforce and machines to align to explore new possibilites. It will deploy the potential of digital technologies, open-sourced content and personalized data of this globally connected and tech-driven world. Education 4.0 will also create a blueprint for the future of learning – from scholl-based learning to learning at the workplace.
-            </p>
-            <p>
-                A few trend in this evolution of learning are to accelerate Remote Learning, Personalized Learning, Choice of Education Tools, Project-based Learning, Field-specific Experience, Data Analysis Changes in Exam Pattern and Assessment. These are exciting, provocative and potentially far-reaching challenges. For individuals and society, new educational tools and resources hold the promise of empowring individuals to develop a fuller array of competencies, skills and knowledge and of unleashing their creative potential. Indeed, Many of the changes underway call to mind the evocative call to mind the evocative words of Irish poet William Butler Yeats that, “Education is not about filling a bucket lighting a fire.”
-            </p>
-    </div>
-  )
+    <section className="why-kit">
+      <div className="why-container">
+        <h2 className="why-subtitle">Welcome to</h2>
+        <h1 className="why-title">Karmayogi Institute of Technology, Pandharpur</h1>
+
+        <p className="why-text">
+          Karmayogi Institute of Technology follows a progressive approach to
+          learning that aligns with the Fourth Industrial Revolution. This new
+          era is driven by smart technologies, artificial intelligence, and
+          robotics, all of which significantly impact modern industries and
+          everyday life. To produce industry-ready engineers, institutions must
+          prepare students for a future dominated by cyber-physical systems
+          across all sectors.
+        </p>
+
+        <p className="why-text">
+          At KIT, students are trained through an advanced curriculum that
+          integrates emerging technologies while transforming the traditional
+          teaching-learning process. Education here is designed to be
+          personalized, peer-to-peer, and continuous, enabling students to adapt
+          to rapid technological changes. explore new possibilities
+          using digital technologies and open-source learning platforms.
+        </p>
+
+        <p className="why-text">
+          This educational evolution also prepares learners for future-focused
+          learning environments—from classroom-based instruction to workplace
+          learning. Modern trends such as remote learning, personalized
+          education, project-based learning, field-specific exposure, data-driven
+          assessment, and innovative examination methods are actively embraced.
+        </p>
+
+        <p className="why-text">
+          These advancements create exciting and far-reaching opportunities for
+          individuals and society. By nurturing creativity, competencies, and
+          real-world skills, KIT ensures holistic development. As poet William
+          Butler Yeats wisely said, <em>“Education is not about filling a bucket,
+          but lighting a fire.”</em>
+        </p>
+      </div>
+    </section>
+  );
 }

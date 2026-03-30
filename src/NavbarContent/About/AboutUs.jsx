@@ -1,18 +1,38 @@
-import React from 'react'
+import React from "react";
+import "../../styles/aboutus.scss";
 
 export default function AboutUs() {
-    return (
-        <div>
-            <h2>Short Description of US</h2>
-            <p>
-                Karmayogi Institute of Technology was established in 2008 by Hon. Late Karmayogi Shri Sudhakar Pant Paricharak, an eminent industrialist committed to the noble cause of education. It caters to educational needs of more than 7000 students, and it’s continuously expanding to cope up with growing demands in the field of technical education.
+  return (
+    <section className="about-us">
+      <div className="about-container">
+        <h2 className="about-title">About Us</h2>
 
-            </p>
-            <p>
-                KIT was established in 2008 which symbolised the beginning of a new era in technical education. The college offers UG engineering degree courses in Civil Engineering, Computer Engineering, and Electrical Engineering, Information Technology, Electronics & Telecommunication  and Mechanical Engineering. The college also offers PG courses in Computer Engineering, Electrical Engineering (Power System), Electronics & Telecommunication (VLSI and Embedded System), Mechanical Engineering The college has the experienced and highly qualified staff, specious classrooms and well equipped laboratories.
+        <p className="about-text">
+          Karmayogi Institute of Technology (KIT) was established in 2009 by
+          Hon. Late Karmayogi Shri Sudhakar Pant Paricharak, an eminent
+          industrialist dedicated to the noble cause of education. The institute
+          caters to the educational needs of more than 7000 students and
+          continues to expand to meet the growing demands in the field of
+          technical education.
+        </p>
 
-                With state of the art research , infrastructural, sports, cultural facilities, the campus provides excellent academic ambience for the students, Hence it is one of the sought after engineering colleges in Shelve, Pandharpur.
-            </p>
-        </div>
-    )
+        <p className="about-text">
+          The establishment of KIT marked the beginning of a new era in technical
+          education. The institute offers undergraduate engineering programs in
+          Civil Engineering, Computer Engineering,  
+          Electronics & Telecommunication, and Mechanical
+          Engineering.
+        </p>
+
+        
+
+        <p className="about-text">
+          With state-of-the-art research facilities, modern infrastructure,
+          sports, and cultural amenities, the campus provides an excellent
+          academic environment. As a result, KIT is one of the most sought-after
+          engineering colleges in Shelve, Pandharpur.
+        </p>
+      </div>
+    </section>
+  );
 }

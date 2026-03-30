@@ -1,0 +1,316 @@
+.contact-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.contact-hero {
+  text-align: center;
+  padding: 6rem 2rem 4rem;
+  background: white;
+  
+  .contact-title {
+    font-size: 4rem;
+    font-weight: 800;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    letter-spacing: -1px;
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(90deg, #667eea, #764ba2);
+      border-radius: 2px;
+    }
+  }
+  
+  .contact-subtitle {
+    font-size: 1.3rem;
+    color: #7f8c8d;
+    max-width: 600px;
+    margin: 2rem auto 0;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+}
+
+.contact-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  max-width: 1200px;
+  margin: -3rem auto 4rem;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+  
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    margin: 2rem auto 3rem;
+  }
+}
+
+.contact-card {
+  background: white;
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+  }
+  
+  &:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.12);
+  }
+  
+  .contact-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    transition: all 0.3s ease;
+    
+    svg {
+      width: 36px;
+      height: 36px;
+      color: white;
+    }
+  }
+  
+  &:hover .contact-icon {
+    transform: scale(1.1) rotate(5deg);
+  }
+  
+  h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+  
+  .contact-detail {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    font-weight: 500;
+  }
+  
+  .map-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+    
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+      letter-spacing: 1px;
+    }
+    
+    &:active {
+      transform: translateY(-1px);
+    }
+  }
+}
+
+.map-section {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
+}
+
+.map-container {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  
+  .map-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    min-height: 300px;
+    
+    @media (max-width: 768px) {
+      flex-direction: column;
+      text-align: center;
+      padding: 2rem;
+    }
+  }
+  
+  .map-info {
+    flex: 1;
+    
+    h3 {
+      font-size: 2.2rem;
+      color: #2c3e50;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    
+    p {
+      font-size: 1.2rem;
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 0.5rem;
+      
+      &:last-child {
+        color: #7f8c8d;
+      }
+    }
+  }
+  
+  .map-visual {
+    flex: 1;
+    text-align: center;
+    
+    svg {
+      width: 120px;
+      height: 120px;
+      color: #667eea;
+      margin-bottom: 1.5rem;
+      opacity: 0.8;
+    }
+    
+    p {
+      font-size: 1.1rem;
+      color: #666;
+      font-weight: 500;
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 1024px) {
+  .contact-hero {
+    padding: 4rem 1rem 3rem;
+    
+    .contact-title {
+      font-size: 3rem;
+    }
+    
+    .contact-subtitle {
+      font-size: 1.1rem;
+    }
+  }
+  
+  .contact-info-grid {
+    padding: 0 1rem;
+  }
+  
+  .contact-card {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-hero {
+    padding: 3rem 1rem 2rem;
+    
+    .contact-title {
+      font-size: 2.5rem;
+    }
+  }
+  
+  .contact-card {
+    padding: 2rem;
+    
+    .contact-icon {
+      width: 70px;
+      height: 70px;
+      
+      svg {
+        width: 30px;
+        height: 30px;
+      }
+    }
+    
+    h3 {
+      font-size: 1.5rem;
+    }
+    
+    .contact-detail {
+      font-size: 1.1rem;
+    }
+  }
+  
+  .map-container .map-content {
+    padding: 2rem 1rem;
+    
+    .map-info h3 {
+      font-size: 1.8rem;
+    }
+    
+    .map-visual svg {
+      width: 80px;
+      height: 80px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-hero .contact-title {
+    font-size: 2rem;
+  }
+  
+  .contact-card {
+    padding: 1.5rem;
+    
+    h3 {
+      font-size: 1.3rem;
+    }
+    
+    .contact-detail {
+      font-size: 1rem;
+    }
+    
+    .map-button {
+      padding: 0.8rem 2rem;
+      font-size: 1rem;
+    }
+  }
+}

@@ -1,0 +1,149 @@
+// Library Facility Page Styles
+.library-facility {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
+}
+
+// Page Title
+.page-title {
+  text-align: center;
+  font-size: 2.4rem;
+  color: #1a365d;
+  margin-bottom: 3rem;
+  position: relative;
+
+  &::after {
+    content: "";
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(45deg, #e63946, #ff6b6b);
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    border-radius: 2px;
+  }
+}
+
+// Top Section (Image + First Paragraph)
+.top-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+// Image container (left side)
+.image-container {
+  flex: 0 0 320px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+}
+
+// First paragraph (right side)
+.text-right {
+  flex: 1;
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4a5568;
+    text-align: justify;
+
+    &::first-letter {
+      initial-letter: 2;
+      font-weight: bold;
+      color: #1a365d;
+      margin-right: 0.4rem;
+    }
+  }
+}
+
+// Main content below
+.content-section {
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  margin-bottom: 3rem;
+
+  p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #4a5568;
+    margin-bottom: 1.6rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Vision & Mission Sections
+.info-section {
+  background: linear-gradient(135deg, #f8fafc, #edf2f7);
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  border-left: 4px solid #e63946;
+
+  h2 {
+    color: #1a365d;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #4a5568;
+    margin: 0;
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .top-section {
+    flex-direction: column;
+  }
+
+  .image-container {
+    max-width: 100%;
+  }
+
+  .page-title {
+    font-size: 2rem;
+  }
+
+  .content-section {
+    padding: 1.5rem;
+  }
+
+  .info-section {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-title {
+    font-size: 1.8rem;
+  }
+
+  .text-right p {
+    font-size: 1rem;
+  }
+}

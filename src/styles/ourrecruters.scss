@@ -1,49 +1,591 @@
+// Variables
+$primary-color: #1a365d;
+$secondary-color: #2d5c9a;
+$accent-color: #e63946;
+$success-color: #10b981;
+$light-color: #ffffff;
+$dark-color: #2d3748;
+$light-bg: #f8fafc;
+$border-radius: 16px;
+$transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+$shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+$shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.15);
 
- 
-.recruiter-container {
-  padding: 4px;
-  background: #fff;
+.recruiters-section {
+  background: linear-gradient(135deg, #f0f4ff 0%, #ffffff 100%);
+  padding: 5rem 2rem;
+  position: relative;
   overflow: hidden;
-  border:2px solid grey;
-  height: 300px;
-  margin:200px 20px 20px 20px;
-  width: 100%px;
-  height: 180px;
-  background-color: #2933e4;
   
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, $accent-color, #3b82f6, $accent-color);
+  }
 }
 
-.recruiter-heading {
+.section-header {
   text-align: center;
-  margin-bottom: 20px;
-  color:pink;
-  font-weight: 600;
+  max-width: 800px;
+  margin: 0 auto 4rem;
+  
+  .header-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .section-label {
+    background: linear-gradient(45deg, $primary-color, $secondary-color);
+    color: white;
+    padding: 0.5rem 2rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: inline-block;
+  }
+  
+  .header-decoration {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    
+    .decoration-line {
+      width: 40px;
+      height: 2px;
+      background: $accent-color;
+    }
+    
+    .decoration-dot {
+      width: 8px;
+      height: 8px;
+      background: $accent-color;
+      border-radius: 50%;
+    }
+  }
+  
+  .section-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: $primary-color;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    
+    .highlight {
+      color: $accent-color;
+      position: relative;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 5px;
+        left: 0;
+        width: 100%;
+        height: 8px;
+        background: rgba($accent-color, 0.15);
+        z-index: -1;
+        border-radius: 4px;
+      }
+    }
+  }
+  
+  .section-description {
+    color: #64748b;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+.recruiter-slider-container {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.slider-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+  
+  .stats {
+    display: flex;
+    gap: 2rem;
+    
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      
+      .stat-number {
+        font-size: 2rem;
+        font-weight: 800;
+        color: $primary-color;
+        line-height: 1;
+        background: linear-gradient(45deg, $primary-color, $accent-color);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      
+      .stat-label {
+        font-size: 0.9rem;
+        color: #64748b;
+        margin-top: 0.3rem;
+      }
+    }
+  }
+  
+  .slider-controls {
+    .pause-indicator {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: rgba($primary-color, 0.05);
+      border-radius: 20px;
+      
+      &.paused {
+        .indicator-dot {
+          background: #f59e0b;
+          animation: none;
+        }
+      }
+      
+      .indicator-dot {
+        width: 8px;
+        height: 8px;
+        background: $success-color;
+        border-radius: 50%;
+        animation: pulse 2s infinite;
+        
+        @keyframes pulse {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.5; }
+        }
+      }
+      
+      .indicator-text {
+        font-size: 0.85rem;
+        color: $primary-color;
+        font-weight: 500;
+      }
+    }
+  }
 }
 
 .recruiter-slider {
+  position: relative;
   overflow: hidden;
-  width: 100%;
-}
-
-.recruiter-track {
-  display: flex;
-  width: max-content;
-  animation: scroll 25s linear infinite;
-}
-
-.recruiter-track img {
-  height: 80px;
-  margin: 0 30px;
-  object-fit: contain;
-  flex-shrink: 0;
-}
-
- 
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
+  padding: 1rem 0;
+  
+  &.paused .slider-track {
+    animation-play-state: paused;
   }
-  100% {
-    transform: translateX(-50%);
+  
+  .slider-track {
+    display: flex;
+    gap: 1.5rem;
+    // Increased speed: Changed from 40s to 30s for faster animation
+    animation: scroll 30s linear infinite;
+    will-change: transform;
+    
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-33.333%); // Changed from -50% to -33.333% for smoother loop
+      }
+    }
+  }
+}
+
+.company-card {
+  flex: 0 0 220px;
+  position: relative;
+  
+  .card-inner {
+    background: white;
+    border-radius: $border-radius;
+    padding: 1.5rem;
+    box-shadow: $shadow;
+    transition: $transition;
+    position: relative;
+    overflow: hidden;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, $primary-color, $accent-color);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: $shadow-lg;
+      
+      &::before {
+        transform: scaleX(1);
+      }
+      
+      .company-logo img {
+        transform: scale(1.1);
+      }
+    }
+  }
+  
+  .company-logo {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1rem;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    background: $light-bg;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    .logo-img {
+      max-width: 60px;
+      max-height: 60px;
+      object-fit: contain;
+      transition: $transition;
+      
+      &.hovered {
+        filter: brightness(1.1);
+      }
+    }
+    
+    .logo-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba($primary-color, 0.1), transparent);
+    }
+  }
+  
+  .company-info {
+    text-align: center;
+    
+    .company-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: $primary-color;
+      margin-bottom: 0.3rem;
+    }
+    
+    .company-category {
+      font-size: 0.8rem;
+      color: #64748b;
+      background: $light-bg;
+      padding: 0.2rem 0.8rem;
+      border-radius: 12px;
+      display: inline-block;
+    }
+  }
+  
+  .company-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba($primary-color, 0.95);
+    color: white;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeIn 0.3s ease forwards;
+    
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+    
+    .hover-content {
+      text-align: center;
+      
+      .hover-badge {
+        background: $accent-color;
+        color: white;
+        padding: 0.3rem 1rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        margin-bottom: 0.8rem;
+        display: inline-block;
+      }
+      
+      .hover-description {
+        font-size: 0.85rem;
+        line-height: 1.4;
+        opacity: 0.9;
+      }
+    }
+  }
+}
+
+.slider-gradient {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  pointer-events: none;
+  z-index: 2;
+  
+  &.left {
+    left: 0;
+    background: linear-gradient(90deg, #f0f4ff, transparent);
+  }
+  
+  &.right {
+    right: 0;
+    background: linear-gradient(90deg, transparent, #f0f4ff);
+  }
+}
+
+.recruiters-footer {
+  background: white;
+  border-radius: $border-radius;
+  padding: 2rem;
+  box-shadow: $shadow;
+  margin-top: 3rem;
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }
+  
+  .placement-info {
+    display: flex;
+    gap: 2rem;
+    
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      
+      .info-icon {
+        font-size: 2rem;
+        background: rgba($primary-color, 0.1);
+        width: 60px;
+        height: 60px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      h4 {
+        font-size: 1.1rem;
+        color: $primary-color;
+        margin-bottom: 0.3rem;
+      }
+      
+      p {
+        font-size: 0.9rem;
+        color: #64748b;
+      }
+    }
+  }
+  
+  .placement-btn {
+    background: linear-gradient(45deg, $primary-color, $secondary-color);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    transition: $transition;
+    
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba($primary-color, 0.3);
+      
+      .btn-icon {
+        transform: translateX(5px);
+      }
+    }
+    
+    .btn-icon {
+      width: 20px;
+      height: 20px;
+      transition: $transition;
+    }
+  }
+}
+
+// New grid for showing all companies
+.all-companies-grid {
+  background: white;
+  border-radius: $border-radius;
+  padding: 2rem;
+  margin-top: 2rem;
+  box-shadow: $shadow;
+  animation: fadeInUp 0.5s ease;
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .grid-title {
+    font-size: 1.5rem;
+    color: $primary-color;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 700;
+  }
+  
+  .companies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+  }
+  
+  .company-grid-item {
+    .grid-card-inner {
+      background: $light-bg;
+      border-radius: 12px;
+      padding: 1rem;
+      transition: $transition;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      
+      &:hover {
+        background: white;
+        box-shadow: $shadow;
+        transform: translateY(-5px);
+      }
+    }
+    
+    .grid-company-logo {
+      width: 60px;
+      height: 60px;
+      flex-shrink: 0;
+      background: white;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      img {
+        max-width: 50px;
+        max-height: 50px;
+        object-fit: contain;
+      }
+    }
+    
+    .grid-company-info {
+      flex: 1;
+      
+      h4 {
+        font-size: 0.9rem;
+        color: $primary-color;
+        margin-bottom: 0.2rem;
+        font-weight: 600;
+      }
+      
+      span {
+        font-size: 0.75rem;
+        color: #64748b;
+        background: rgba($primary-color, 0.05);
+        padding: 0.2rem 0.5rem;
+        border-radius: 10px;
+        display: inline-block;
+      }
+    }
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .recruiters-section {
+    padding: 3rem 1rem;
+  }
+  
+  .section-title {
+    font-size: 2rem !important;
+  }
+  
+  .slider-info {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+  
+  .slider-gradient {
+    width: 50px;
+  }
+  
+  .company-card {
+    flex: 0 0 180px;
+    
+    .card-inner {
+      height: 160px;
+      padding: 1rem;
+    }
+    
+    .company-logo {
+      width: 60px;
+      height: 60px;
+      
+      .logo-img {
+        max-width: 45px;
+        max-height: 45px;
+      }
+    }
   }
 }

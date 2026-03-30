@@ -44,10 +44,10 @@ export default function Footer() {
         <div className="footer-col">
           <h4>Connect With Us</h4>
           <div className="social-icons">
-            <a href="#"><FaInstagram /></a>
-            <a href="#"><FaYoutube /></a>
-            <a href="#"><FaLinkedinIn /></a>
-            <a href="#"><FaFacebookF /></a>
+            <a href="https://www.instagram.com/karmayogi_institute?igsh=Y3U0ODJvMjdteW9l"><FaInstagram /></a>
+            <a href="https://youtube.com/@karmayogiinstitute?si=fc8z_Hc0ATdrAS28"><FaYoutube /></a>
+            <a href="https://www.linkedin.com/company/karmayogi-institute-of-technology-pandharpur/"><FaLinkedinIn /></a>
+            <a href="https://www.facebook.com/share/1bR4gX5y6D/"><FaFacebookF /></a>
           </div>
         </div>
       </div>
