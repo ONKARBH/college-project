@@ -196,8 +196,32 @@ $box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
     }
   }
 
+  // Mobile view - Keep logos side by side
   @media (max-width: 768px) {
     padding: 1rem;
+
+    .header-container {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .logo-container {
+      flex: 0 0 auto;
+      
+      &.left-logo img,
+      &.right-logo img {
+        height: 70px;
+      }
+    }
+
+    .center-content {
+      order: 3;
+      flex: 1 1 100%;
+      padding: 0;
+      margin-top: 0.5rem;
+    }
 
     .college-name {
       font-size: 1.5rem !important;
@@ -220,6 +244,23 @@ $box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
         padding: 0.3rem 0.8rem;
         font-size: 0.75rem;
       }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .logo-container {
+      &.left-logo img,
+      &.right-logo img {
+        height: 60px;
+      }
+    }
+    
+    .trust-name {
+      font-size: 0.85rem;
+    }
+    
+    .college-name {
+      font-size: 1.2rem !important;
     }
   }
 
