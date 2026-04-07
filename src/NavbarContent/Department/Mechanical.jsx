@@ -14,7 +14,7 @@ export default function Mechanical() {
         <div className="civil-intro-right">
           <h1>Mechanical Engineering Department</h1>
           <p>
-            On behalf of Fabtech Technical Campus, College of Engineering and Research, Sangola, we welcome all stakeholders to the Mechanical Engineering Department. 
+            On behalf of karmayogi institute of technology Campus, College of Engineering and Research, pandharpur, we welcome all stakeholders to the Mechanical Engineering Department. 
             It gives me immense pleasure to lead this prestigious department. Our faculty is a disciplined and dedicated team with a mix of academic and industrial experience, working towards the growth of our students and institution. 
             The department is equipped with state-of-the-art laboratories to support academic programs.
           </p>
