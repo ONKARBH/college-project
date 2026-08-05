@@ -52,7 +52,6 @@ import AISHE from "./NavbarContent/About/AISHE";
 import FY_DSY_ACAP_ILMeritList2025_26 from "./NavbarContent/Admissions/FY_DSY_ACAP_ILMeritList2025_26";
 import FY_DSY_Non_CAP_IL_Admission from "./NavbarContent/Admissions/FY_DSY_Non_CAP_IL_Admission";
 import Admission_Procedure from "./NavbarContent/Admissions/Admission/Admission_Procedure";
-import Dsy_Merit_List from "./NavbarContent/Admissions/Dsy_Merit_List";
 import Brochure from "./NavbarContent/Admissions/Brochure";
 import Eligibility_Criteria from "./NavbarContent/Admissions/Admission/Eligibility_Criteria";
 import Fee_Structure from "./NavbarContent/Admissions/Admission/Fee_Structure";
@@ -166,8 +165,7 @@ function App() {
         {/* ADMISSIONS ROUTES */}
         <Route path="/admissions/fy_dsy_acap_ilmeritlist2025_26" element={<FY_DSY_ACAP_ILMeritList2025_26 />} />
         <Route path="/admissions/fy_dsy_non_cap_il_admission" element={<FY_DSY_Non_CAP_IL_Admission />} />
-        <Route path="/admissions/dsy_merit_list" element={<Dsy_Merit_List />} />
-        <Route path="/admissions/brochure" element={<Brochure />} />
+         <Route path="/admissions/brochure" element={<Brochure />} />
         <Route path="/admissions/feestructure" element={<Fee_Structure />} />
         <Route path="/admission/admission_procedure" element={<Admission_Procedure />} />
         <Route path="/admission/eligibility_criteria" element={<Eligibility_Criteria />} />
