@@ -1,5 +1,5 @@
 import React from "react";
-import gym from "../../assets/images/Facilities/Gym/gym.jpeg";
+import gym from "../../assets/images/Facilities/Gym/Gym.jpeg";
 import "../../styles/Gym.scss";
 
 export default function Gym() {
