@@ -1,0 +1,20 @@
+[33maa95cdb[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m HEAD@{0}: commit: image format changed
+[33m88804c3[m HEAD@{1}: commit: update img
+[33mc32bd69[m HEAD@{2}: commit: update img
+[33me3ab239[m HEAD@{3}: commit: update again for deployment
+[33m8cee3ca[m HEAD@{4}: commit: updated version
+[33m2492c1e[m HEAD@{5}: commit: update mobile view
+[33mc03d8a3[m HEAD@{6}: commit: logo update
+[33mfbadffb[m HEAD@{7}: commit: logo modifi
+[33mc39f61c[m HEAD@{8}: commit: second commit
+[33m2ea18fa[m HEAD@{9}: Branch: renamed refs/heads/main to refs/heads/main
+[33m2ea18fa[m HEAD@{11}: Branch: renamed refs/heads/main to refs/heads/main
+[33m2ea18fa[m HEAD@{13}: commit: router path fix
+[33m678fbd8[m HEAD@{14}: commit: add router
+[33macd704b[m HEAD@{15}: commit: implement responsive
+[33m53b88ec[m HEAD@{16}: commit: update
+[33m0a3782f[m HEAD@{17}: commit: ourachievement added
+[33mdef72db[m HEAD@{18}: commit: vue folder remove
+[33m1e93b53[m HEAD@{19}: Branch: renamed refs/heads/main to refs/heads/main
+[33m1e93b53[m HEAD@{21}: commit (merge): first commit
+[33m04cf648[m HEAD@{22}: commit (initial): git initialize
