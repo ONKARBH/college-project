@@ -104,6 +104,8 @@ $box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
       margin-bottom: 1rem;
       background: linear-gradient(45deg, #ffffff, #ffffff);
       -webkit-background-clip: text;
+      -moz-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
       text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       line-height: 1.2;
@@ -370,6 +372,10 @@ $box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
         font-size: 0.7rem;
       }
     }
+
+    .ticker-content {
+      animation: scrollTicker 18s linear infinite;
+    }
   }
 
   @media (max-width: 768px) {
@@ -378,32 +384,99 @@ $box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
     }
 
     .news-ticker-inner {
-      padding: 0.4rem 0.8rem;
+      padding: 0.4rem 0.5rem;
+      gap: 0.5rem;
     }
 
     .ticker-left {
-      padding: 0.2rem 0.7rem;
-      gap: 0.3rem;
+      padding: 0.2rem 0.6rem;
+      gap: 0.2rem;
+      margin-right: 0.5rem;
+      min-width: auto;
+      flex-shrink: 0;
 
       .announcement-icon {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
       }
 
       .ticker-label {
-        font-size: 0.6rem;
+        font-size: 0.55rem;
+        letter-spacing: 0.5px;
       }
 
       .arrow-icon {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
       }
     }
 
+    .ticker-track {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .ticker-content {
+      animation: scrollTickerMobile 15s linear infinite;
+      white-space: nowrap;
+    }
+
     .ticker-link {
-      font-size: 0.7rem;
+      font-size: 0.65rem;
+      padding: 0.1rem 0;
     }
 
     .ticker-separator {
-      margin: 0 0.6rem;
+      margin: 0 0.4rem;
+      font-size: 0.6rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .news-ticker-inner {
+      padding: 0.3rem 0.3rem;
+      gap: 0.3rem;
+    }
+
+    .ticker-left {
+      padding: 0.15rem 0.4rem;
+      gap: 0.15rem;
+      margin-right: 0.3rem;
+      border-radius: 20px;
+
+      .announcement-icon {
+        font-size: 0.6rem;
+      }
+
+      .ticker-label {
+        font-size: 0.5rem;
+        letter-spacing: 0.3px;
+      }
+
+      .arrow-icon {
+        font-size: 0.7rem;
+      }
+    }
+
+    .ticker-content {
+      animation: scrollTickerMobile 12s linear infinite;
+    }
+
+    .ticker-link {
+      font-size: 0.55rem;
+    }
+
+    .ticker-separator {
+      margin: 0 0.3rem;
+      font-size: 0.5rem;
+    }
+  }
+
+  // Mobile specific animation - faster and smoother
+  @keyframes scrollTickerMobile {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
     }
   }
 }

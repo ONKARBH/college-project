@@ -11,7 +11,7 @@ import company7 from "../assets/images/recruiters/company7.jpeg"
 import company8 from "../assets/images/recruiters/company8.jpeg"
 import company9 from "../assets/images/recruiters/company9.jpeg"
 import company10 from "../assets/images/recruiters/company10.jpeg"
- import company12 from "../assets/images/recruiters/company12.jpeg"
+import company12 from "../assets/images/recruiters/company12.jpeg"
 import company13 from "../assets/images/recruiters/company13.jpeg"
 import company14 from "../assets/images/recruiters/company14.jpeg"
 import company15 from "../assets/images/recruiters/company15.jpeg"
@@ -32,7 +32,7 @@ const companies = [
   { id: 8, logo: company8, name: "Tech Mahindra", category: "IT Services" },
   { id: 9, logo: company9, name: "ZENSOR", category: "IT Training" },
   { id: 10, logo: company10, name: "Jio Digital", category: "IT Technology" },
-   { id: 12, logo: company12, name: "BAJAJ", category: "IT Technology" },
+  { id: 12, logo: company12, name: "BAJAJ", category: "IT Technology" },
   { id: 13, logo: company13, name: "HP", category: "Technology" },
   { id: 14, logo: company14, name: "DELL", category: "Technology" },
   { id: 15, logo: company15, name: "Acer", category: "IT Training" },

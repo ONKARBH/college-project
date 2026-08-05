@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "../styles/placedstudent.scss";
 
@@ -51,15 +51,33 @@ const placedStudents = [
   { id: 6, name: "Prathmesh Binwade", company: "Meta Engitech", package: "₹4 LPA", department: "Mechanical", year: 2025 },
   { id: 7, name: "Neha Patil", company: "Alada Construction Pune", package: "₹2.5 LPA", department: "Civil", year: 2025 },
   { id: 8, name: "Rushikush Gajare", company: "Kolobro Group Pvt Ltd", package: "₹2.5 LPA", department: "Civil", year: 2025 },
-  { id: 9, name: "Laxshman Chivare", company: "Alada Construction Pune", package: "₹2.5 LPA", department: "Civil", year: 2025 },
+  { id: 9, name: "Lakshman Chivare", company: "Alada Construction Pune", package: "₹2.5 LPA", department: "Civil", year: 2025 },
   { id: 10, name: "Kashinath Andewadi", company: "ARMS Pvt Ltd", package: "₹2.5 LPA", department: "Electronics", year: 2025 },
   { id: 11, name: "Vivek More ", company: "ARMS Pvt Ltd", package: "₹2.5 LPA", department: "Electronics", year: 2025 },
   { id: 12, name: "Vaibhav Gaikwad", company: "ARMS Pvt Ltd", package: "₹2.5 LPA", department: "Electronics", year: 2025 },
 ];
 
+// Duplicate students for continuous scrolling effect on mobile
+const getDuplicateStudents = (students, count = 3) => {
+  let result = [];
+  for (let i = 0; i < count; i++) {
+    result = [...result, ...students.map(s => ({ ...s, key: `${s.id}-${i}` }))];
+  }
+  return result;
+};
+
 /* -------------------- Component -------------------- */
 export default function PlacedStudent() {
   const [selectedDepartment, setSelectedDepartment] = useState("All");
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const getStudentImage = (student) => {
     const images = departmentImages[student.department];
@@ -73,7 +91,10 @@ export default function PlacedStudent() {
 
   const departments = ["All", ...new Set(placedStudents.map((s) => s.department))];
 
-  /* -------------------- Slider Settings (ONLY FOR ALL) -------------------- */
+  // On mobile, we want all students regardless of filter
+  const mobileStudents = getDuplicateStudents(placedStudents, 4);
+
+  /* -------------------- Slider Settings -------------------- */
   const sliderSettings = {
     dots: false,
     arrows: false,
@@ -85,7 +106,14 @@ export default function PlacedStudent() {
     slidesToScroll: 1,
     responsive: [
       { breakpoint: 1024, settings: { slidesToShow: 2 } },
-      { breakpoint: 768, settings: { slidesToShow: 1 } },
+      { 
+        breakpoint: 768, 
+        settings: { 
+          slidesToShow: 1,
+          autoplaySpeed: 1500,
+          speed: 600,
+        } 
+      },
     ],
   };
 
@@ -131,37 +159,48 @@ export default function PlacedStudent() {
         </div>
       </div>
 
-      {/* ---------- FILTER ---------- */}
-      <div className="filter-controls">
-        <div className="filter-group">
-          <div className="filter-label">Filter by Department:</div>
-          <div className="filter-buttons">
-            {departments.map((dept) => (
-              <button
-                key={dept}
-                className={`filter-btn ${selectedDepartment === dept ? "active" : ""}`}
-                onClick={() => setSelectedDepartment(dept)}
-                style={
-                  selectedDepartment === dept && dept !== "All"
-                    ? { backgroundColor: departmentColors[dept], borderColor: departmentColors[dept] }
-                    : {}
-                }
-              >
-                {dept}
-              </button>
-            ))}
+      {/* ---------- FILTER (Hidden on Mobile) ---------- */}
+      {!isMobile && (
+        <div className="filter-controls">
+          <div className="filter-group">
+            <div className="filter-label">Filter by Department:</div>
+            <div className="filter-buttons">
+              {departments.map((dept) => (
+                <button
+                  key={dept}
+                  className={`filter-btn ${selectedDepartment === dept ? "active" : ""}`}
+                  onClick={() => setSelectedDepartment(dept)}
+                  style={
+                    selectedDepartment === dept && dept !== "All"
+                      ? { backgroundColor: departmentColors[dept], borderColor: departmentColors[dept] }
+                      : {}
+                  }
+                >
+                  {dept}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
       {/* ---------- STUDENTS ---------- */}
-      {selectedDepartment === "All" ? (
+      {isMobile ? (
+        // Mobile: Show all students in continuous carousel
+        <Slider {...sliderSettings}>
+          {mobileStudents.map((student) => (
+            <StudentCard key={student.key} student={student} />
+          ))}
+        </Slider>
+      ) : selectedDepartment === "All" ? (
+        // Desktop: Show filtered students in carousel
         <Slider {...sliderSettings}>
           {filteredStudents.map((student) => (
             <StudentCard key={student.id} student={student} />
           ))}
         </Slider>
       ) : (
+        // Desktop: Show filtered students in grid
         <div className="students-grid">
           {filteredStudents.map((student) => (
             <StudentCard key={student.id} student={student} />

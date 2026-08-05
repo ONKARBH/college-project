@@ -15,7 +15,7 @@ export default function Footer() {
         <div className="footer-col">
           <h3 className="logo">Karmayogi Institute of Technology</h3>
           <p>
-            Karmayogi Institute of Technology was established in 2008 to provide
+            Karmayogi Institute of Technology was established in 2009 to provide
             quality technical education to cater to the needs of modern India.
           </p>
         </div>

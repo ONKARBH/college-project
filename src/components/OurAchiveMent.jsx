@@ -169,12 +169,23 @@ export default function AchievementSection() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [filter, setFilter] = useState("All");
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const filteredAchievements = filter === "All"
     ? achievements
     : achievements.filter(ach => ach.category === filter);
 
-  const totalSlides = Math.ceil(filteredAchievements.length / 3);
+  // For mobile: show 1 card per slide, for desktop: show 3 cards per slide
+  const cardsPerSlide = isMobile ? 1 : 3;
+  const totalSlides = Math.ceil(filteredAchievements.length / cardsPerSlide);
 
   const nextSlide = useCallback(() => {
     setActiveIndex(prev => (prev + 1) % totalSlides);
@@ -192,8 +203,8 @@ export default function AchievementSection() {
   }, [nextSlide, isAutoPlaying]);
 
   const getVisibleCards = () => {
-    const start = activeIndex * 3;
-    return filteredAchievements.slice(start, start + 3);
+    const start = activeIndex * cardsPerSlide;
+    return filteredAchievements.slice(start, start + cardsPerSlide);
   };
 
   const visibleCards = getVisibleCards();
@@ -270,7 +281,7 @@ export default function AchievementSection() {
             {Array.from({ length: totalSlides }).map((_, slideIndex) => (
               <div className="slide-group" key={slideIndex}>
                 {filteredAchievements
-                  .slice(slideIndex * 3, slideIndex * 3 + 3)
+                  .slice(slideIndex * cardsPerSlide, slideIndex * cardsPerSlide + cardsPerSlide)
                   .map((achievement) => (
                     <div
                       key={achievement.id}
@@ -288,10 +299,6 @@ export default function AchievementSection() {
                             }}
                           />
                           <div className="image-overlay"></div>
-                          <div className="achievement-badge">
-                            <span className="badge-icon">🏆</span>
-                            <span className="badge-text">{achievement.category}</span>
-                          </div>
                           <div className="achievement-year">{achievement.date}</div>
                         </div>
 
