@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 
-import slide1 from "../assets/images/slideimg/slide1.jpg";
-import slide2 from "../assets/images/slideimg/slide2.jpg";
-import slide3 from "../assets/images/slideimg/slide3.jpg";
-import slide4 from "../assets/images/slideimg/slide4.jpg";
-import slide5 from "../assets/images/slideimg/slide5.jpg";
-import slide6 from "../assets/images/slideimg/slide6.jpg";
-import slide7 from "../assets/images/slideimg/slide7.jpg";
+import slide1 from "../assets/images/slideImg/slide1.jpg";
+import slide2 from "../assets/images/slideImg/slide2.jpg";
+import slide3 from "../assets/images/slideImg/slide3.jpg";
+import slide4 from "../assets/images/slideImg/slide4.jpg";
+import slide5 from "../assets/images/slideImg/slide5.jpg";
+import slide6 from "../assets/images/slideImg/slide6.jpg";
+import slide7 from "../assets/images/slideImg/slide7.jpg";
 
 import "../styles/slider.scss";
 
