@@ -62,30 +62,30 @@ export default function Header() {
           <div className="ticker-track">
             <div className="ticker-content">
               <a 
-                href="https://karmatech-2026.netlify.app/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="ticker-link"
+                // href="https://karmatech-2026.netlify.app/" 
+                // target="_blank" 
+                // rel="noopener noreferrer"
+                // className="ticker-link"
               >
-                🔥 KARMATECH 2K26 – State Level Technical Event on April 2, 2026 – Click for Details & Registration 🔥
+                🔥Contact for admission 2026-27 +91-8554006300🔥
               </a>
               <span className="ticker-separator">✦</span>
               <a 
-                href="https://karmatech-2026.netlify.app/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="ticker-link"
+                // href="https://karmatech-2026.netlify.app/" 
+                // target="_blank" 
+                // rel="noopener noreferrer"
+                // className="ticker-link"
               >
-                🔥 KARMATECH 2K26 – State Level Technical Event on April 2, 2026 – Click for Details & Registration 🔥
+                🔥 !! Excellent Placement 2025-26!! 🔥
               </a>
               <span className="ticker-separator">✦</span>
               <a 
-                href="https://karmatech-2026.netlify.app/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="ticker-link"
+                // href="https://karmatech-2026.netlify.app/" 
+                // target="_blank" 
+                // rel="noopener noreferrer"
+                // className="ticker-link"
               >
-                🔥 KARMATECH 2K26 – State Level Technical Event on April 2, 2026 – Click for Details & Registration 🔥
+                🔥 Upcoming Ruturang 2026-27 Cultural Activities.... 🔥
               </a>
             </div>
           </div>

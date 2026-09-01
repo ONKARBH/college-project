@@ -139,6 +139,8 @@ export default function Navbar() {
     {
       name: "Admissions",
       dropdown: [
+        {name:"FY-ACAP-Admission-2026-27", path:"/FY_ACAP_Admission2026_27/FY_ACAP_Admission2026-27.pdf"},
+        {name:"DSY-ACAP-Admission-2026-27", path:"/DSY_ACAP_Admission2026_27/DSY_ACAP_Admission2026-27.pdf"},
         { name: "FY_DSY Merit List 2025-26", path: "/FY_DSY_ACAP_ILMeritList2025_26/fy_dsy_acap_ilmeritlist2025_26.pdf" },
         { name: "Non-CAP Admissions", path: "/FY_DSY_Non_CAP_IL_Admission/Non_Cap.jpg" },
         { name: "Brochure", path: "/Brochure/Brochure.pdf" },
